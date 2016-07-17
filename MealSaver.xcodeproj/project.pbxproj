@@ -13,7 +13,10 @@
 		6B52E7711D3BC32A00D841DB /* MealSaver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E76F1D3BC32A00D841DB /* MealSaver.xcdatamodeld */; };
 		6B52E7731D3BC32A00D841DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52E7721D3BC32A00D841DB /* Assets.xcassets */; };
 		6B52E7761D3BC32A00D841DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52E7741D3BC32A00D841DB /* LaunchScreen.storyboard */; };
-		6B52E7811D3BC32A00D841DB /* MealSaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E7801D3BC32A00D841DB /* MealSaverTests.swift */; };
+		6B52E78C1D3BC52000D841DB /* MealTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E78B1D3BC52000D841DB /* MealTest.swift */; };
+		6B52E78F1D3BC75300D841DB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E78E1D3BC75300D841DB /* Meal.swift */; };
+		6B52E7921D3BCEF000D841DB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E78E1D3BC75300D841DB /* Meal.swift */; };
+		6B52E7951D3BD47300D841DB /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E7941D3BD47300D841DB /* MealCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,10 @@
 		6B52E7751D3BC32A00D841DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B52E7771D3BC32A00D841DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B52E77C1D3BC32A00D841DB /* MealSaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealSaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B52E7801D3BC32A00D841DB /* MealSaverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSaverTests.swift; sourceTree = "<group>"; };
 		6B52E7821D3BC32A00D841DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B52E78B1D3BC52000D841DB /* MealTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTest.swift; sourceTree = "<group>"; };
+		6B52E78E1D3BC75300D841DB /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		6B52E7941D3BD47300D841DB /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,8 @@
 		6B52E7671D3BC32A00D841DB /* MealSaver */ = {
 			isa = PBXGroup;
 			children = (
+				6B52E7931D3BD44E00D841DB /* Views */,
+				6B52E78D1D3BC73F00D841DB /* Models */,
 				6B52E7681D3BC32A00D841DB /* AppDelegate.swift */,
 				6B52E76A1D3BC32A00D841DB /* ViewController.swift */,
 				6B52E76C1D3BC32A00D841DB /* Main.storyboard */,
@@ -93,10 +100,26 @@
 		6B52E77F1D3BC32A00D841DB /* MealSaverTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B52E7801D3BC32A00D841DB /* MealSaverTests.swift */,
 				6B52E7821D3BC32A00D841DB /* Info.plist */,
+				6B52E78B1D3BC52000D841DB /* MealTest.swift */,
 			);
 			path = MealSaverTests;
+			sourceTree = "<group>";
+		};
+		6B52E78D1D3BC73F00D841DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B52E78E1D3BC75300D841DB /* Meal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6B52E7931D3BD44E00D841DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B52E7941D3BD47300D841DB /* MealCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B52E7951D3BD47300D841DB /* MealCell.swift in Sources */,
+				6B52E78F1D3BC75300D841DB /* Meal.swift in Sources */,
 				6B52E76B1D3BC32A00D841DB /* ViewController.swift in Sources */,
 				6B52E7691D3BC32A00D841DB /* AppDelegate.swift in Sources */,
 				6B52E7711D3BC32A00D841DB /* MealSaver.xcdatamodeld in Sources */,
@@ -210,7 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B52E7811D3BC32A00D841DB /* MealSaverTests.swift in Sources */,
+				6B52E7921D3BCEF000D841DB /* Meal.swift in Sources */,
+				6B52E78C1D3BC52000D841DB /* MealTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
