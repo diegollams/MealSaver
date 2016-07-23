@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private var meals = [Meal]()
+    private var meals = [NSManagedObject]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +22,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func loadData(){
-        let meal1 = Meal(title: "Pasta azul", description: "Deliciosa pasta de color azul", score: 5)
-        meals.append(meal1!)
-        let meal2 = Meal(title: "Pasta azul", description: "Deliciosa pasta de color azul", score: 5)
-        meals.append(meal2!)
-        let meal3 = Meal(title: "Pasta azul", description: "Deliciosa pasta de color azul", score: 5)
-        meals.append(meal3!)
-        let meal4 = Meal(title: "Pasta azul", description: "Deliciosa pasta de color azul", score: 5)
-        meals.append(meal4!)
+        let appDelegeta = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let manageContext = appDelegeta.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Meal")
+        
+        do{
+            let result =  try manageContext.executeFetchRequest(fetchRequest)
+            meals = result as! [NSManagedObject]
+        }catch{
+            print("eror")
+        }
     }
 
     
@@ -49,9 +54,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return cell
         }
     }
-    
-    
-
-
 }
 

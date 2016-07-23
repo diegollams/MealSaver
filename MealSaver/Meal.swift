@@ -14,6 +14,12 @@ internal class Meal {
     private var _desc: String
     private var _score: Float
     
+    struct Fields{
+        static let Title = "title"
+        static let Desc = "desc"
+        static let Score = "score"
+    }
+    
     //MARK: computed properties
     var title: String{
         get{

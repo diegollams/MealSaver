@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MealCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,5 +18,12 @@ class MealCell: UITableViewCell {
         titleLabel.text = meal.title
         descriptionLabel.text = meal.desc
         scoreTextLabel.text = "\(meal.score)"
+    }
+    
+    func setMeal(meal: NSManagedObject){
+        titleLabel.text = meal.valueForKey(Meal.Fields.Title) as? String
+        descriptionLabel.text = meal.valueForKey(Meal.Fields.Desc) as? String
+        let score = meal.valueForKey(Meal.Fields.Score) as! Float
+        scoreTextLabel.text = "\(score)"
     }
 }
