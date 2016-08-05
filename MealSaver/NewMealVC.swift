@@ -12,6 +12,7 @@ import CoreData
 class NewMealVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

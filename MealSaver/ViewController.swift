@@ -15,16 +15,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         tableView.delegate = self
         tableView.dataSource = self
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" ,let destination = segue.destinationViewController as? ShowMealVC ,let index = tableView.indexPathForSelectedRow?.row{
+            if let meal = Meal(nsmanageObject: meals[index]){
+                destination.meal = meal
+                print("showDetail")
+            }
+        }
+    }
     
-    func loadData(){
+    func getManageContext() -> NSManagedObjectContext{
         let appDelegeta = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let manageContext = appDelegeta.managedObjectContext
+        return appDelegeta.managedObjectContext
+    }
+    
+    func loadData(){
+        let manageContext = getManageContext()
         
         let fetchRequest = NSFetchRequest(entityName: "Meal")
         
@@ -32,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let result =  try manageContext.executeFetchRequest(fetchRequest)
             meals = result as! [NSManagedObject]
         }catch{
-            print("eror")
+            print("error")
         }
     }
 
@@ -52,6 +67,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }else{
             let cell = MealCell()
             return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let manageContext = getManageContext()
+            manageContext.deleteObject(meals[indexPath.row])
+            do{
+                try manageContext.save()
+            }catch {
+                print("error")
+            }
+            print("delete")
+            meals.removeAtIndex(indexPath.row)  
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
 }

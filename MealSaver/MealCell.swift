@@ -20,10 +20,9 @@ class MealCell: UITableViewCell {
         scoreTextLabel.text = "\(meal.score)"
     }
     
-    func setMeal(meal: NSManagedObject){
-        titleLabel.text = meal.valueForKey(Meal.Fields.Title) as? String
-        descriptionLabel.text = meal.valueForKey(Meal.Fields.Desc) as? String
-        let score = meal.valueForKey(Meal.Fields.Score) as! Float
-        scoreTextLabel.text = "\(score)"
+    func setMeal(nsManagerObject: NSManagedObject){
+        if let meal = Meal(nsmanageObject: nsManagerObject){
+            setMeal(meal)
+        }
     }
 }

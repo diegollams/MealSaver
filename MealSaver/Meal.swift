@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 internal class Meal {
     //MARK: Properties
@@ -34,6 +35,24 @@ internal class Meal {
     var score: Float{
         get{
             return _score
+        }
+    }
+    
+    init?(nsmanageObject: NSManagedObject){
+        if let title = nsmanageObject.valueForKey(Meal.Fields.Title) as? String{
+            self._title = title
+        }else{
+            return nil
+        }
+        if let desc = nsmanageObject.valueForKey(Meal.Fields.Desc) as? String{
+            self._desc = desc
+        }else{
+            return nil
+        }
+        if let score = nsmanageObject.valueForKey(Meal.Fields.Score) as? Float{
+            self._score = score
+        }else{
+            return nil
         }
     }
     

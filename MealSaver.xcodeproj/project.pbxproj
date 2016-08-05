@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0C051C1D540CC70011D7DB /* ShowMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C051B1D540CC70011D7DB /* ShowMealVC.swift */; };
 		6B52E7691D3BC32A00D841DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E7681D3BC32A00D841DB /* AppDelegate.swift */; };
 		6B52E76B1D3BC32A00D841DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52E76A1D3BC32A00D841DB /* ViewController.swift */; };
 		6B52E76E1D3BC32A00D841DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52E76C1D3BC32A00D841DB /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B0C051B1D540CC70011D7DB /* ShowMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMealVC.swift; sourceTree = "<group>"; };
 		6B52E7651D3BC32A00D841DB /* MealSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52E7681D3BC32A00D841DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52E76A1D3BC32A00D841DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				6B52E76A1D3BC32A00D841DB /* ViewController.swift */,
 				6BE3F1A91D405D6800122B2D /* NewMealVC.swift */,
+				6B0C051B1D540CC70011D7DB /* ShowMealVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE3F1AA1D405D6800122B2D /* NewMealVC.swift in Sources */,
+				6B0C051C1D540CC70011D7DB /* ShowMealVC.swift in Sources */,
 				6B52E7951D3BD47300D841DB /* MealCell.swift in Sources */,
 				6B52E78F1D3BC75300D841DB /* Meal.swift in Sources */,
 				6B52E76B1D3BC32A00D841DB /* ViewController.swift in Sources */,
