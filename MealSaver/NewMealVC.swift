@@ -12,10 +12,23 @@ import CoreData
 class NewMealVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.addTarget(self, action: #selector(self.checkValidMeal), forControlEvents: .EditingChanged)
+        descTextField.addTarget(self, action: #selector(self.checkValidMeal), forControlEvents: .EditingChanged)
+
+        checkValidMeal()
+    }
+    
+    func checkValidMeal(){
+        if titleTextField.text!.isEmpty || descTextField.text!.isEmpty{
+            submitButton.enabled = false
+            return
+        }
+        submitButton.enabled = true
     }
     
     @IBAction func finishiButtonPressed(sender: UIButton){
@@ -39,6 +52,6 @@ class NewMealVC: UIViewController {
         }
         
         navigationController?.popViewControllerAnimated(true)
-        
     }
+    
 }

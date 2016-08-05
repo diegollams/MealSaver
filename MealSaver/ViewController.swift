@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
@@ -40,12 +41,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func loadData(){
         let manageContext = getManageContext()
-        
         let fetchRequest = NSFetchRequest(entityName: "Meal")
         
         do{
             let result =  try manageContext.executeFetchRequest(fetchRequest)
             meals = result as! [NSManagedObject]
+            self.tableView.reloadData()
         }catch{
             print("error")
         }
@@ -83,7 +84,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }catch {
                 print("error")
             }
-            print("delete")
             meals.removeAtIndex(indexPath.row)  
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }

@@ -321,6 +321,7 @@
                     </view>
                     <connections>
                         <outlet property="descTextField" destination="bqt-M3-kIz" id="oa7-8F-eWh"/>
+                        <outlet property="submitButton" destination="isD-YX-lsk" id="x6c-Ri-Wt1"/>
                         <outlet property="titleTextField" destination="qA1-1N-OnR" id="qmz-XT-CHD"/>
                     </connections>
                 </viewController>
